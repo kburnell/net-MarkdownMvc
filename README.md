@@ -50,7 +50,7 @@ publishing):
 ## HTML Helper
 
 ```
-@using MarkdownMvc
+@using MarkdownMvcLibrary
 
 @{
     ViewBag.Title = "My Stupid Page";

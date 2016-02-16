@@ -1,4 +1,4 @@
-﻿namespace MarkdownMvc
+﻿namespace MarkdownMvcLibrary
 {
     using System;
 

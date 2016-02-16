@@ -1,7 +1,7 @@
-﻿namespace MarkdownMvc
+﻿namespace MarkdownMvcLibrary
 {
     using CommonMark;
-    using MarkdownMvc.Properties;
+    using MarkdownMvcLibrary.Properties;
     using System;
     using System.Globalization;
     using System.IO;

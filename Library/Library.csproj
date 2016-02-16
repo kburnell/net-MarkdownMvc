@@ -7,7 +7,7 @@
     <ProjectGuid>{E8EE18C3-F4BC-4DBB-8260-044B6B7C5AB9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MarkdownMvc</RootNamespace>
+    <RootNamespace>MarkdownMvcLibrary</RootNamespace>
     <AssemblyName>MarkdownMvc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
