@@ -33,6 +33,9 @@
             // Page doctype
             var doctype = "<!doctype html>";
 
+            // Page encoding
+            var charset = "<meta charset=\"utf-8\" />";
+
             // Page title
             var title = "<title>" + Path.GetFileNameWithoutExtension(_filepath) + "</title>";
 
@@ -45,7 +48,7 @@
             var markdown = CommonMarkConverter.Convert(text);
 
             // Joining all up
-            var content = string.Join("\n", doctype, css, title, markdown);
+            var content = string.Join("\n", doctype, charset, title, css, markdown);
 
             // Writing to the stream
             writer.Write(content);
