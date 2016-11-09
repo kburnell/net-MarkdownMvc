@@ -1,0 +1,14 @@
+﻿@using Demo.Utilities
+@using MarkdownMvcLibrary
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2>ASP.NET MVC Markdown View Engine and HTML Helper</h2>
+    <p class="lead">Content below is rendered from a local Markdown file</p>
+</div>
+
+<div class="markdown">
+    @Html.Markdown("index_markdown.md", ConfigurationReader.AllAsDictionary)
+</div>
