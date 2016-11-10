@@ -19,8 +19,9 @@ namespace MarkdownMvcLibrary {
         /// <param name="path">The file with the markdown content to be rendered</param>
         /// <returns>The rendered HTML</returns>
         public static IHtmlString Markdown(this HtmlHelper helper, string path) {
-            return Markdown(helper, path, null, null);
+            return Markdown(helper, path, null);
         }
+
 
         /// <summary>
         ///     Reads the content of the given file path, interprets as markdown and renders the equivalent HTML.
@@ -29,19 +30,7 @@ namespace MarkdownMvcLibrary {
         /// <param name="path">The file with the markdown content to be rendered</param>
         /// <param name="dynamicValues">Dictionary of dynamic values to inject</param>
         /// <returns>The rendered HTML</returns>
-        public static IHtmlString Markdown(this HtmlHelper helper, string path, Dictionary<string, string> dynamicValues) {
-            return Markdown(helper, path, dynamicValues, "||");
-        }
-
-        /// <summary>
-        ///     Reads the content of the given file path, interprets as markdown and renders the equivalent HTML.
-        /// </summary>
-        /// <param name="helper">Html helper</param>
-        /// <param name="path">The file with the markdown content to be rendered</param>
-        /// <param name="dynamicValues">Dictionary of dynamic values to inject</param>
-        /// <param name="delimeter">Dynamic value delimeter</param>
-        /// <returns>The rendered HTML</returns>
-        public static IHtmlString Markdown(this HtmlHelper helper, string path, Dictionary<string, string> dynamicValues, string delimeter)
+        public static IHtmlString Markdown(this HtmlHelper helper, string path, Dictionary<string, string> dynamicValues)
         {
             if (helper == null)
             {
@@ -60,8 +49,8 @@ namespace MarkdownMvcLibrary {
             var dir = Path.GetDirectoryName(viewPath) ?? string.Empty;
             var fullpath = Path.Combine(dir, path);
             var unparsed = File.ReadAllText(fullpath);
-            var dynamicValueInjector = new MarkdownDynamicValueInjector();
-            unparsed = dynamicValueInjector.InjectDynamicValues(unparsed, dynamicValues, delimeter);
+            var dynamicValueInjector = new MarkdownDynamicContentHandler();
+            unparsed = dynamicValueInjector.ProcessMarkdown(unparsed, dynamicValues);
             var parsed = CommonMarkConverter.Convert(unparsed);
             return new MvcHtmlString(parsed);
         }

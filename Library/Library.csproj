@@ -48,7 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarkdownDynamicValueInjector.cs" />
+    <Compile Include="MarkdownDynamicContentHandler.cs" />
     <Compile Include="MarkdownHtmlHelper.cs" />
     <Compile Include="NotARazorViewException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

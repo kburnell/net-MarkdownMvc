@@ -64,14 +64,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MarkdownDynamicValueInjectorTest.cs" />
+    <Compile Include="MarkdownDynamicContentHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InputFiles\test_markdown_dynamic_values_replaced.md">
+    <None Include="InputFiles\test_markdown_conditional_processed.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="InputFiles\test_markdown_conditional.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="InputFiles\test_markdown_dynamic.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="InputFiles\test_markdown_dynamic_processed.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="InputFiles\test_markdown_static.md">
